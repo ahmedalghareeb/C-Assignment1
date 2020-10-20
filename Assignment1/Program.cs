@@ -14,7 +14,6 @@ namespace Assignment1
 			//print the result
 			try
             {
-				
 				Console.WriteLine("your result is: " + add(inputArray));
 			}
 			catch(Exception e) {
@@ -35,7 +34,7 @@ namespace Assignment1
 		static string getUserInput()
         {
 			//get user input 
-			Console.WriteLine("Enter your problem in format x+y");
+			Console.WriteLine("Enter your problem in format x+y+...+n");
 			return Console.ReadLine();
 		}
     }
