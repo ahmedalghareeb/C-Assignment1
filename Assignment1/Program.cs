@@ -7,29 +7,29 @@ namespace Assignment1
         static void Main(string[] args)
         {
 
-			//read user input and
-			//split the input into an array
-			string[] inputArray = getUserInput().Split('+');
+            //read user input and
+            //split the input into an array
+            string[] inputArray = getUserInput().Split('+');
 
 			//print the result
 			try
-			{
-				Console.WriteLine("your result is: "+add(inputArray[0], inputArray[1]));
+            {
+				
+				Console.WriteLine("your result is: " + add(inputArray));
 			}
-			catch {
+			catch(Exception e) {
+				Console.WriteLine(e.Message);
 				Console.WriteLine("Enter only numbers in format x+y");
 			}
 			
 		}
 
-		static int add(String x , String y)
+		static int add(string[] stringArray)
         {
-			int num1, num2;
-
-			//convert the string into int
-			num1 = Convert.ToInt32(x);
-			num2 = Convert.ToInt32(y);
-			return num1 + num2;
+			int result = 0;
+			foreach (string stringNum in stringArray) 
+				result = result + Convert.ToInt32(stringNum);
+			return result;
         }
 
 		static string getUserInput()
